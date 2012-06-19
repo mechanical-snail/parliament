@@ -5,11 +5,15 @@ from io import StringIO
 
 PartySpec = namedtuple('PartySpec', ['name', 'seats', 'color'])
 
+MAX_ROWS = 160	# about 100,000 seats
+
 def render_svg(partyspecs):
 	'''Renders a parliament seat allocation diagram with the given parties' numbers of seats. Parameter: list of (party_name, num_seats) or (party_name, num_seats, color) tuples. If color is unspecified for a particular tuple, a random color will be chosen. Returns the SVG output as a string.'''
 	
 	# Total number of seats per number of rows in diagram:
-	TOTALS = [3, 15, 33, 61, 95, 138, 189, 247, 313, 388, 469, 559, 657, 762, 876, 997, 1126, 1263, 1408, 1560, 1722, 1889, 2066, 2250, 2442, 2641, 2850, 3064, 3289, 3519, 3759, 4005, 4261, 4522, 4794, 5071, 5358, 5652, 5953, 6263, 6581, 6906, 7239, 7581, 7929, 8287, 8650, 9024, 9404]
+	# Expanded by fitting a quadratic polynomial (fit ignores rounding)
+	TOTALS = [int(round(-0.5049934867548131 - 0.4684161324104589*(i+1) + 3.926494853260455*(i+1)**2)) for i in range(MAX_ROWS)]
+	# TOTALS = [3, 15, 33, 61, 95, 138, 189, 247, 313, 388, 469, 559, 657, 762, 876, 997, 1126, 1263, 1408, 1560, 1722, 1889, 2066, 2250, 2442, 2641, 2850, 3064, 3289, 3519, 3759, 4005, 4261, 4522, 4794, 5071, 5358, 5652, 5953, 6263, 6581, 6906, 7239, 7581, 7929, 8287, 8650, 9024, 9404]
 	
 	# Validation
 	def normalize_partyspec(party):
