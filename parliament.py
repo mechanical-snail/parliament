@@ -1,4 +1,4 @@
-#!/usr/pkg/bin/python
+#!/usr/bin/env python2.7
 import cgi, re, math, random
 print "Content-type: text/html"
 print """
