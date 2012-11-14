@@ -18,6 +18,7 @@ print """
   a random colour, and one labeled "Party B" in light green.)</li>
   <li>The script will create an svg diagram when you press "send".
   <b> - don\'t worry if it doesn\'t render properly in your browser, just save and open!</b></li>
+  <li>If you want to use it on a Wikimedia project, I'd recommend using it on Wikimedia Commons; in that case, please use an appropriate category, for example <a href="http://commons.wikimedia.org/wiki/Category:Election_apportionment_diagrams">Election apportionment diagrams</a>.</li>
   </ul>
   <form method="post" action="arch.cgi">
     <p>List of parties: <input type="text" name="inputlist"/></p>
