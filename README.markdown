@@ -1,5 +1,7 @@
 Script to generate a pretty parliament seat allocation diagram.
 
+If you want to use it on a Wikimedia project, I'd recommend using it on Wikimedia Commons; in that case, please use an appropriate category, for example [Election apportionment diagrams](https://commons.wikimedia.org/wiki/Category:Election_apportionment_diagrams).
+
 Original version written by [David Richfield (“Slashme”)](https://en.wikipedia.org/wiki/User:Slashme). Obtained from his website at http://drichfld.freeshell.org/arch.py (live version: http://drichfld.freeshell.org/perlcgi/arch.cgi).
 
 Info: https://en.wikipedia.org/wiki/User_talk:Slashme/parliament.py
